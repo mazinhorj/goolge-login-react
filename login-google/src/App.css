@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.container {
+  width: 450px;
+  display: flex;
+  margin: 1rem auto;
+  align-items: center;
+  justify-content: center;
+}
+/*
+#singInDiv.hide,
+#userInfo.hide {
+  display: none;
+} */
