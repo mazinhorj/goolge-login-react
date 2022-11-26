@@ -1,7 +1,6 @@
 import logo from './logo.png';
 import jwt_decodde from 'jwt-decode';
 import { useState, useEffect } from 'react';
-
 import './App.css';
 
 function App() {
@@ -20,6 +19,7 @@ function App() {
         size: "large"
       }
     );
+    google.accounts.id.prompt();
   }, []);
 
   const handleCallbackResponse = (response) => {
@@ -31,13 +31,11 @@ function App() {
     document.getElementById("userInfo").hidden = false;
   };
 
-  
   const logout = (e) => {
     setUser({});
     document.getElementById("singInDiv").hidden = false;
     document.getElementById("userInfo").hidden = true;
   };
-
 
   // sem usuário: botão de login
   // com usuário: botão logout
@@ -47,7 +45,6 @@ function App() {
       <h2>SECRETARIA MUNICIPAL DE EDUCAÇÃO</h2>
       <h3>e-Diário</h3>
       <img src={logo} className="App-logo" alt="logo" />
-      <div className="container">
         <div id="singInDiv"></div>
         { 
           user &&
@@ -59,10 +56,7 @@ function App() {
             </div>
         }
       </div>
-    </div>
   );
 };
-
-
 
 export default App;
